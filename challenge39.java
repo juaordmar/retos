@@ -14,3 +14,7 @@
  * entenderlo,
  * no únicamente a copiar su implementación.
  */
+
+public class Challenge39 {
+
+}
