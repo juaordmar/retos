@@ -13,10 +13,14 @@ public class quicksort {
         System.out.println("Before:");
         printArray(numbers);
 
-        quicksort(numbers, 0, numbers.length - 1);
+        quicksort(numbers);
         System.out.println("\nAfter:");
         printArray(numbers);
 
+    }
+
+    private static void quicksort(int[] array) {
+        quicksort(array, 0, array.length - 1);
     }
 
     private static void quicksort(int[] array, int lowIndex, int highIndex) {
@@ -25,8 +29,10 @@ public class quicksort {
             return;
         }
         // vamos a usar punteros para movernos entre los números una vez quitado el
-        // pivot
-        int pivot = array[highIndex];
+        // pivot, tener un pivot random es mejor para la eficiencia del algoritmo
+        int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;
+        int pivot = array[pivotIndex];
+        swap(array, pivotIndex, highIndex);
         // lp(left pointer) va hacia la derecha y el rp(right pointer), hacia la
         // izquierda
         // cuando lp encuentra un numero mayor que el pivot y hp uno menor hacemos un
