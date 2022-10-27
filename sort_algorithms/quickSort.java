@@ -1,6 +1,8 @@
+package sort_algorithms;
+
 import java.util.Random;
 
-public class quicksort {
+public class quickSort {
 
     public static void main(String[] args) {
         Random rand = new Random();
@@ -11,19 +13,19 @@ public class quicksort {
         }
 
         System.out.println("Before:");
-        printArray(numbers);
+        utiles.printArray(numbers);
 
-        quicksort(numbers);
+        quickSort(numbers);
         System.out.println("\nAfter:");
-        printArray(numbers);
+        utiles.printArray(numbers);
 
     }
 
-    private static void quicksort(int[] array) {
-        quicksort(array, 0, array.length - 1);
+    private static void quickSort(int[] array) {
+        quickSort(array, 0, array.length - 1);
     }
 
-    private static void quicksort(int[] array, int lowIndex, int highIndex) {
+    private static void quickSort(int[] array, int lowIndex, int highIndex) {
 
         if (lowIndex >= highIndex) {
             return;
@@ -57,8 +59,8 @@ public class quicksort {
         // y los menores a su izquierda, lo restante es llamar al algoritmo para estas
         // dos mitades
 
-        quicksort(array, lowIndex, lp - 1); // mitad izquierda
-        quicksort(array, lp + 1, highIndex); // mitad derecha
+        quickSort(array, lowIndex, lp - 1); // mitad izquierda
+        quickSort(array, lp + 1, highIndex); // mitad derecha
 
     }
 
@@ -67,12 +69,6 @@ public class quicksort {
         int temp = array[i1];
         array[i1] = array[i2];
         array[i2] = temp;
-    }
-
-    private static void printArray(int[] numbers) {
-        for (int i = 0; i < numbers.length; i++) {
-            System.out.println(numbers[i]);
-        }
     }
 
 }
